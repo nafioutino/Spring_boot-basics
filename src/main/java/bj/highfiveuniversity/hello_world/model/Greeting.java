@@ -3,7 +3,7 @@ public class Greeting {
     private final String content;
     public Greeting(long id, String content) {
         this.id = id;
-        thid.content = content;
+        this.content = content;
     }
 
     public long getId() {
@@ -14,6 +14,31 @@ public class Greeting {
     public String getContent() {
         return this.content;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(this == o)return true;
+        if(o == null || getClass() != o.getClass()) return false;
+        Greeting obj = (Greeting) o ;
+        return content == obj.content;
+     };
+
+     @Override
+    public int hashCode(){
+        return Objects.hash(id, content);
+    };
+
+    @Override
+    public String toString(){
+        return "{ id= "+id+ "content='"+content+ "'}"
+    };
+
+
+
+
+
+
+
 
 
 
